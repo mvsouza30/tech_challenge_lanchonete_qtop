@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qtop-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  qtop-app
+  template:
+    metadata:
+      labels:
+        app:  qtop-app
+    spec:
+      containers:
+        - name: qtop-app-container
+          image: mvsouza30/lanchonete_qtop_app:v50
+          ports:
+            - containerPort: 5000

@@ -16,6 +16,7 @@ disable=
       W0611, # unused-import
       C0301, # line-too-long
       C0303, # trailing-whitespace
+      E1121, # too-many-function-args
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
 # 3 compatible code, which means that the block might have code that exists

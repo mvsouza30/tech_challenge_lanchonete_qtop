@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qtop-db-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qtop-db
+  template:
+    metadata:
+      labels:
+        app: qtop-db
+    spec:
+      containers:
+        - name: qtop-db-container
+          image: mvsouza30/lanchonete_qtop_db:v28
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_ROOT_PASSWORD
+          ports:
+            - containerPort: 3306
