@@ -25,3 +25,5 @@ kubectl apply -f svc-app-qtop.yaml
 
 executar o hpa do app:
 kubectl apply -f app-hpa.yaml
+
+Maiores detalhes estão presentes no arquivo "Documentação do Tech-Challenge 02 – Lanchonete QTOP.pdf"
